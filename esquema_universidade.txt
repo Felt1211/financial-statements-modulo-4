@@ -1,0 +1,36 @@
+- Dim_Professor
+O que é: O cadastro único de cada professor. Serve para filtrar relatórios por nome, cargo ou departamento.
+Colunas principais:
+SK_Professor (Chave)
+Nome_Professor
+Eh_Coordenador (Sim/Não - útil para filtrar apenas gestores)
+Nome_Departamento (Desnormalizado para facilitar filtros)
+Campus
+    
+- Dim_Disciplina
+O que é: O catálogo de disciplinas oferecidas. Serve para analisar quais matérias têm mais demanda ou quais são pré-requisitos de outras.
+Colunas principais:
+SK_Disciplina (Chave)
+Nome_Disciplina
+Possui_Pre_Requisito (Sim/Não)
+Lista_Pre_Requisitos (Nomes dos pré-requisitos, se houver)
+
+- Dim_Curso
+O que é: O cadastro dos cursos. Serve para agrupar disciplinas e alunos por grade curricular.
+Colunas principais:
+SK_Curso (Chave)
+Nome_Curso
+Nome_Departamento (A qual departamento o curso pertence)
+
+- Dim_Departamento
+O que é: A estrutura organizacional. Serve para visões macro
+SK_Departamento (Chave)
+Nome_Departamento
+Campus
+
+- Dim_Tempo
+O que é: O calendário. Serve para análise temporal
+Data (Chave)
+Ano
+Semestre
+Mes
